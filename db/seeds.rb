@@ -9,6 +9,7 @@
 
 john = User.create!(user_name: "johnthebestest")
 colin = User.create!(user_name: "vistalover")
+tommy = User.create!(user_name: "tommyD")
 
 poll = Poll.create!(title: "How is barbies made?", author_id: john.id)
 
@@ -20,3 +21,4 @@ answer1 = AnswerChoice.create!(question_id: question.id, answer: " I don't know"
 answer2 = AnswerChoice.create!(question_id: question.id, answer: "I know but not telling")
 
 resp1 = Response.create!(answer_choice_id: answer2.id, respondent_id: colin.id)
+resp2 = Response.create!(answer_choice_id: answer2.id, respondent_id: tommy.id)
