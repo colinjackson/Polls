@@ -11,4 +11,11 @@ class User < ActiveRecord::Base
   foreign_key: :user_id,
   primary_key: :id
 
+  has_many :authored_poll_responses,
+  through: :authored_polls,
+  source: :responses
+
+  has_many :questions, through: :authored_polls, source: :questions
+  has_many :answer_choices, through: :questions, source: :answer_choices
+
 end
